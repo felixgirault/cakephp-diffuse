@@ -20,7 +20,7 @@ class DiffuseHelper extends AppHelper {
 	 *	@var array
 	 */
 
-	public $helpers = array( 'Html' );
+	public $helpers = [ 'Html' ];
 
 
 
@@ -30,7 +30,7 @@ class DiffuseHelper extends AppHelper {
 	 *	@var array
 	 */
 
-	public $services = array( );
+	public $services = [ ];
 
 
 
@@ -51,7 +51,7 @@ class DiffuseHelper extends AppHelper {
 	 *	@param array $settings Helper settings.
 	 */
 
-	public function __construct( View $View, array $settings = array( )) {
+	public function __construct( View $View, array $settings = [ ]) {
 
 		parent::__construct( $View, $settings );
 
@@ -74,11 +74,11 @@ class DiffuseHelper extends AppHelper {
 	 *	@return string URL.
 	 */
 
-	public function __call( $service, $arguments = array( )) {
+	public function __call( $service, $arguments = [ ]) {
 
 		array_unshift( $arguments, $service );
 
-		return call_user_func_array( array( $this, 'link' ), $arguments );
+		return call_user_func_array([ $this, 'link' ], $arguments );
 	}
 
 
@@ -93,7 +93,7 @@ class DiffuseHelper extends AppHelper {
 	 *	@return string Link tag.
 	 */
 
-	public function link( $service, $text, $params, array $options = array( )) {
+	public function link( $service, $text, $params, array $options = [ ]) {
 
 		return $this->Html->link(
 			$text,
